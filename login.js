@@ -26,9 +26,10 @@
   const auth = getAuth()
 
   const userLogin = document.getElementById('loginBtn')
-  userLogin.addEventListener('click',login )
+  userLogin.addEventListener('click',Login )
 
-  async function login(e){
+  // create a login function
+  async function Login(e){
     try{
 
         const email = document.getElementById("email").value
