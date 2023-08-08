@@ -2,7 +2,20 @@
     margin: 0%;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 
+/* <-----------------scroll bar----------> */
+::-webkit-scrollbar{
+    width: 0.625rem;
+}
+::-webkit-scrollbar-track{
+    background: white;
+}
+::-webkit-scrollbar-thumb{
+    background: #fd7622;
+}
 /* <----------------nav bar-------------> */
 .btn2{
     background-color: #fd7622;
@@ -11,20 +24,46 @@
     height: 40px;
     width: 100px;
 }
-.navbar{
-    top: 0;
-    position: sticky;
+.navigation-wrap{
+    position: fixed;
     width: 100%;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height: 100px !important;
+    left: 0;
+    z-index: 1000;
+    height: 100px;
+transition: all 0.3 ease-out;
+-webkit-transition: all 0.3s ease-out;
 
+}
+.navigation-wrap{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:white;
+    box-shadow: 0 0.125rem 1.75rem 0 rgb(0,0,0,0.09);
+    transition:all .15s ease-in-out 0s;
 }
 .navbar a{
     color: black;
 }
 .navbar-brand {
     color: #fd7622 !important;
+}
+.btns{
+    width: 200px;
+    height: 70px;
+}
+.accountBtn{
+    width: 100%;
+    height: 100%;
+}
+.acc-btn{
+    height: 70%;
+    width: 70%;
+    margin: 10px auto;
+    border-radius: 30px;
+    background-color: #fd7622;
+    border: none;
 }
 
 /* designing signup page */
@@ -85,14 +124,78 @@ a{
 .logo{
     width: 200px;
 }
+.cart-img{
+    width: 140px;
+    height: 60px;
+}
+.cart-img img{
+    height: 100%;
+    width: 100%;
+}
 
+.nameandimg img{
+    border-radius: 50%;
+}
+#myimgid{
+    height: 90px;
+    border-radius: 10px soilid black;
+    border-radius: 50%;
+}
+
+.nameandimg p{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.nameandimg{
+    display: flex;
+    align-items: center;
+    margin: 5px 0 10px 0;
+}
+.dropdown{
+    width: 250px;
+    height: 400px;
+    box-shadow: 0 0 10px grey;
+    padding: 10px;
+    background-color: white;
+    display: none;
+    position: absolute;
+    top: 60px;
+}
+
+.dropdown ul li{
+    display: flex;
+    padding: 5btpx;
+    /* margin-top: 5px; */
+    cursor: pointer;
+}
+
+.dropdown ul li:hover{
+    background-color: #c7dcff ;
+}
+
+
+.dropdown ul li i{
+    color: black;
+    font-size: 17px;
+}
+
+.dropdown ul li p{
+    margin-left: 10px;
+    font-size: 17px;
+}
+.blackdiv{
+    display: block;
+}
 
 /* <------------------ad---------> */
 .ad_img{
     width: 80%;
     height: 300px;
     margin: 10px auto;
+    margin-top: 140px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid black;
 
 }
 
@@ -128,4 +231,20 @@ a{
 }
 .right-bar{
     height: 500px;
+}
+
+/* <--------------cart----------> */
+.heading{
+    justify-content: space-around;
+}
+
+/* <------------custom css classes -----------> */
+.border-radius{
+    border-radius: 50%;
+}
+.hidden{
+    display: none;
+}
+.visible{
+    display: flex;
 }
