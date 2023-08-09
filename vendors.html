@@ -3,38 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
     crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-
-<div class="vendorsParent d-flex w-100" >
-    <div class="side-bar border w-25">
-        <p>profile</p>
-        <div class="vendor-img">
-            <img src="" alt="" id="venImg">
-            <p>name</p>
-            <p>email</p>
-
-        </div>
-    </div>
-    <div class="right-bar w-75 border">
-        <p>information</p>
-        <div class="info d-flex w-100 border">
-            <div class="product-list w-50 border bg-info">
-                <p>product list</p>
+    <div class="conatiner-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <img src="./images/car-deal-logo-design-template-element-with-car-handshake-illustration_412311-3222.avif" alt="" height="100px" width="120px">
+              <a class="navbar-brand fa-bold" href="#">Car Mart</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark fa-bold" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fa-bold text-dark" href="#my-product">Product List</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fa-bold text-dark">Add</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn3" type="submit">Search</button>
+                </form>
+              </div>
             </div>
-            <div class="sold-out-items w-50 border bg-info">
-                <p>sold items list</p>
+          </nav>
+        <div class="container">
+            <div class="row mt-3">
+                <img src="./images/ads3.jpg" alt="">
             </div>
-    
-        </div>
+            <div class="row mt-5 ">
+                <h1 class="fa-bold text-center" id="my-product">
+                    Your's Product 
+                </h1>
+                <div class="row mt-4">
+                    <div class="col-3"> <div class="pro-list">
+                        <img src="" alt="">
+                        <h1>df</h1>
+                    </div> </div>
+                    <div class="col-3"> <div class="pro-list">
+                        <img src="" alt="">
+                        <h1>df</h1>
+                    </div> </div>
+                    <div class="col-3"> <div class="pro-list">
+                        <img src="" alt="">
+                        <h1>df</h1>
+                    </div> </div>
+                    <div class="col-3"> <div class="pro-list">
+                        <img src="" alt="">
+                        <h1>df</h1>
+                    </div> </div>
+                </div>
+            </div>
+        </div>  
+                <!-- <---------------------------Footer---------------------------> 
+                <div id="footer " class="mt-4">
+                    <div class="footer py-5">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-12 text-center">
+                            <a href="#" class="footer-link">Register</a>
+                            <a href="#" class="footer-link">Forum</a>
+                            <a href="#" class="footer-link">Affiliate</a>
+                            <a href="#" class="footer-link">FAQ</a>
+                            <div class="footer-social pt-4 text-center">
+                              <a href="#"><i class="fab fa-facebook-f"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fab fa-youtube"></i></a>
+                              <a href="#"><i class="fab fa-linkedin"></i></a>
+                              <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                          </div>
+                          <div class="col-sm-12">
+                            <div class="footer-copy">
+                              <div class="copy-right text-center pt-5">
+                                <p class="text-light"> &copy; 2023 | Foodies | All rights reserved</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
     </div>
-</div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -43,5 +103,4 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
 <script type="module" src="vendors.js"></script>
-
 </html>
