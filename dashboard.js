@@ -1,4 +1,8 @@
-// get nav bar
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, setDoc,getDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+import { auth,db } from "./firbaseConfig.js";
+
+// // get nav bar
 const navBar = document.getElementById('nav-bar')
 let profile = document.querySelector('.profile')
 var cartImg = document.querySelector('.cart-img')
@@ -10,9 +14,9 @@ function directLogin(){
     window.location.replace('./index.html')
 }
 
-//apply condition if user login show cart 
-const getUser = JSON.parse(localStorage.getItem('user'))
-// console.log(getUser.name)
+// //apply condition if user login show cart 
+var getUser = JSON.parse(localStorage.getItem('user'))
+console.log(getUser.uid)
 
 //check user login
 if (!getUser){
@@ -36,7 +40,7 @@ if (!getUser){
     <ul>
         <li>
             <i class="fa-solid fa-user"></i>
-            <p> My Account </p>
+            <p id="my-account"> My Account </p>
         </li>
 
         <li>
@@ -60,7 +64,7 @@ if (!getUser){
 
         <li>
             <i class="fa-solid fa-right-from-bracket"></i>
-            <p> Log Out </p>
+            <p id="logout">  Log Out </p>
         </li>
     </ul>
 </div>
@@ -84,5 +88,28 @@ function openCart(){
     window.location.replace('./cart.html')
 }
 
-
+//create logout
+var logout=document.getElementById('logout')
+logout.addEventListener("click",Logout)
+function Logout(){
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log('sucessfully logout')
+      }).catch((error) => {
+        // An error happened.
+      });    
+    localStorage.setItem('user',JSON.stringify(''))
+    window.location.replace("./dashboard.html")
 }
+
+//naviagate page to my account
+let myAccount= document.getElementById('my-account')
+myAccount.addEventListener('click',Account)
+function Account(){
+    window.location.replace("./vendors.html")
+}
+//new
+
+const docRef = doc(db,'users',getUser.uid)
+const docSnap = await getDoc(docRef)
+console.log(docSnap.data())
