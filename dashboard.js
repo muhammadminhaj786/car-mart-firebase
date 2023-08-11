@@ -90,7 +90,10 @@ function openCart(){
 
 //create logout
 var logout=document.getElementById('logout')
-logout.addEventListener("click",Logout)
+if(!logout){
+    console.log('user logout')
+}else{
+    logout.addEventListener("click",Logout)
 function Logout(){
     signOut(auth).then(() => {
         // Sign-out successful.
@@ -98,18 +101,25 @@ function Logout(){
       }).catch((error) => {
         // An error happened.
       });    
-    localStorage.setItem('user',JSON.stringify(''))
+    localStorage.clear();
     window.location.replace("./dashboard.html")
+}
 }
 
 //naviagate page to my account
 let myAccount= document.getElementById('my-account')
-myAccount.addEventListener('click',Account)
-function Account(){
+if(!myAccount){
+    console.log('user logout')
+}else{
+    myAccount.addEventListener('click',Account)
+    function Account(){
     window.location.replace("./vendors.html")
 }
-//new
+}
 
-const docRef = doc(db,'users',getUser.uid)
-const docSnap = await getDoc(docRef)
-console.log(docSnap.data())
+//working on add product in dashbboard
+window.addEventListener('load',getAllProducts)
+async function getAllProducts(){
+    let getProducts = await getDocs(collection(db,'products'))
+    console.log(getAllProducts.data)
+}
