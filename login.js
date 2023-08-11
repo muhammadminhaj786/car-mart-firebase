@@ -4,9 +4,21 @@ import { getFirestore, collection, addDoc, getDocs, getDoc ,doc, updateDoc, setD
 //import auth, db
 import { auth,db } from "./firbaseConfig.js";
 
+//if user alerady loged in navigiate dashboard
+let getUser = JSON.parse(localStorage.getItem('user'))
+// console.log(getUser.uid)
+if(getUser===undefined){
+    console.log('Not signed in')
+}else{
+    // window.location.replace('./dashboard.html')
+}
+
+
 //working on login page
 const login = document.getElementById('Login')
 login.addEventListener('click',Login)
+// var accBtn = document.getElementById('acc-btn')
+// console.log(accBtn) 
 async function Login(e){
     try{
         var email = document.getElementById('email').value
@@ -26,14 +38,14 @@ async function Login(e){
         console.log("Document data:", docSnap.data());
         const userData = docSnap.data()
         localStorage.setItem("user", JSON.stringify(userData))
-
-        if (userLogin.type === "admin") {
+        console.log(userLogin.type)
+        if (userData.type === "admin") {
             window.location.replace("/adminDashboard.html")
-        } else if (userLogin.type === "Vendor") {
-            window.location.replace("/vendors.html")
+        } else if (userData.type === "Vendor") {
+            window.location.replace("/dashboard.html")
 
-        } else if (userLogin.type === "Customer") {
-            window.location.replace("/customer.html")
+        } else if (userData.type === "Customer") {
+            window.location.replace("/dashboard.html")
 
         }
     }catch(error){
@@ -42,3 +54,5 @@ async function Login(e){
     }
 
 }
+
+
