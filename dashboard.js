@@ -1,3 +1,4 @@
+welcome()
 import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, setDoc,getDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 import { auth,db } from "./firbaseConfig.js";
@@ -8,6 +9,27 @@ let profile = document.querySelector('.profile')
 var cartImg = document.querySelector('.cart-img')
 let accountBtn = document.querySelector('.accountBtn')
 
+//test
+// let dashAcc = document.querySelector('.acc-btn')
+// console.log(dashAcc)
+// dashAcc.addEventListener('click',dashLogin)
+// function dashLogin(){
+//     window.location.replace('./index.html')
+// }
+
+//welcome back msg modal
+//login modal
+function welcome(){
+    Swal.fire({
+position: 'top-end',
+icon: 'success',
+title: 'Sucessfully Login',
+showConfirmButton: false,
+timer: 1500
+    })
+}
+
+
 //navigiate login page
 accountBtn.addEventListener('click',directLogin)
 function directLogin(){
@@ -16,7 +38,7 @@ function directLogin(){
 
 // //apply condition if user login show cart 
 var getUser = JSON.parse(localStorage.getItem('user'))
-console.log(getUser.uid)
+// console.log(getUser.uid)
 
 //check user login
 if (!getUser){
@@ -118,8 +140,8 @@ if(!myAccount){
 }
 
 //working on add product in dashbboard
-window.addEventListener('load',getAllProducts)
-async function getAllProducts(){
-    let getProducts = await getDocs(collection(db,'products'))
-    console.log(getAllProducts.data)
-}
+// window.addEventListener('load',getAllProducts)
+// async function getAllProducts(){
+//     let getProducts = await getDocs(collection(db,'products'))
+//     console.log(getAllProducts.data)
+// }
