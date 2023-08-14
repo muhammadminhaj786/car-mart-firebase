@@ -5,7 +5,7 @@ import { auth,db } from "./firbaseConfig.js";
 window.addEventListener('load',getAllUser)
 
 var tbody = document.getElementById('tbody')
-var id = 0
+var id = 1
 async function getAllUser(){
     const docRef = await getDocs(collection(db,'users'))
     docRef.forEach(function(doc){
